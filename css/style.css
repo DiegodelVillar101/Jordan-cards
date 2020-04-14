@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #060714;
+}
+
+.container{
+    position: relative;
+    /* display: flex */
+    
+}
+
+.container .card{
+    /* UTILICE EL MARGIN PARA SEPARAR LAS CARTAS */
+    margin-left: 35px;
+    margin-top: 30px;
+
+    
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #ee842c;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container .card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #4e0114;
+    clip-path: circle(150px at 80% 20%);
+    transform: .5s ease-in-out;
+}
+
+.container .card:hover::before{
+    clip-path: circle(300px at 80% -20%);
+}
+
+.container .card::after{
+    content: 'Nike';
+    position: absolute;
+    top: 40%;
+    left: -20;
+    font-size: 9em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgb(51, 30, 31); 
+    opacity: .6;
+    /* color: rgba(10, 252, 119, 0.04); */
+}
+
+.container .card:hover::after{
+    opacity: .2;
+    transition: .333333s;
+}
+
+.container .card .imgbx{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    width: 220px;
+    transition: .5s;
+    padding-left: 40px; 
+
+}
+
+.container .card:hover .imgbx{
+    top: 15%;
+    transform: translateY(0%);
+}
+
+ .container .card .imgbx img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    width: 270px;
+
+} 
+
+.container .card .contentbx{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container .card:hover .contentbx{
+    height: 210px;
+}
+
+.container .card .contentbx h2{
+    position: relative;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgb(22, 16, 16);
+}
+
+.container .card .contentbx .size,
+.container .card .contentbx .color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: .3s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .card:hover .contentbx .size{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .3s;
+
+}
+
+.container .card:hover .contentbx .color{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .5s;
+
+}
+
+.container .card .contentbx .size h3,
+.container .card .contentbx .color h3{
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.container .card .contentbx .size span{
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background: rgb(255, 255, 255);
+    margin: 0 5px;
+    transition: .3s;
+    color: #111;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container .card .contentbx .size span:hover{
+    background: #9bdc28;
+}
+
+.container .card .contentbx .color span{
+    width: 20px;
+    height: 20px;
+    background: #ff4;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.container .card .contentbx .color span:nth-child(2){
+    background: #9bdc28;
+}
+.container .card .contentbx .color span:nth-child(3){
+    background: #082bc7;
+}
+.container .card .contentbx .color span:nth-child(4){
+    background: #c708b7;
+}
+
+.container .card .contentbx a{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .3s;
+}
+
+.container .card .contentbx a:hover{
+    color: #fff;
+    font-weight: 600;
+    background: orangered;
+    transition: none;
+}
+
+.container .card:hover .contentbx a{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: .45s;
+} 
+
+
+@media (min-width: 1000px){
+    .container{
+        position: relative;
+        display: flex
+        
+    }
+    
+}
+
+
+
+
